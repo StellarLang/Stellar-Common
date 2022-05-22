@@ -19,5 +19,7 @@ namespace stellar {
             std::string // string
     >;
 
-    ValueType getType(Value&);
+    ValueType typeOf(Value& value);
+
+    void printValue(Value& value);
 }
