@@ -1,7 +1,7 @@
 <img src="./asset/stellar.png" align="right" width="128px" alt="Stellar Icon"/>
 
-# LibStellar
-LibStellar is the core library containing all the common classes necessary to build the Stellar vm, compiler, and other Stellar tooling.
+# Stellar Common
+Stellar Common is the core library containing all the common classes necessary to build the Stellar vm, compiler, and other Stellar tooling.
 
 ## Compiling
 // TODO
