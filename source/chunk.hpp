@@ -18,13 +18,13 @@ namespace stellar {
         void writeConstant(const Value& value, int line);
         size_t addConstant(const Value& value);
 
-        std::vector<uint8_t> getCode();
-        std::vector<Value> getConstants();
-        std::vector<int> getLines();
+        [[maybe_unused]] std::vector<uint8_t> getCode();
+        [[maybe_unused]] std::vector<Value> getConstants();
+        [[maybe_unused]] std::vector<int> getLines();
 
         void disassemble(const std::string& name);
-    private:
         size_t disassembleInstruction(size_t offset);
+    private:
         size_t constantInstruction(const std::string& name, size_t offset);
 
         std::vector<uint8_t> code;

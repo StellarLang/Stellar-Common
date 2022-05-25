@@ -3,7 +3,7 @@
 #include <iostream>
 
 stellar::ValueType stellar::typeOf(Value& value) {
-    std::visit([](auto&& arg) {
+    return std::visit([](auto&& arg) {
         using T = std::decay_t<decltype(arg)>;
         if constexpr (std::is_same_v<T, double>)
             return VT_NUMBER;
@@ -27,6 +27,6 @@ void stellar::printValue(Value& value) {
         } else if constexpr (std::is_same_v<T, std::monostate>)
             std::cout << "null";
         else if constexpr (std::is_same_v<T, std::string>)
-            std::cout << "\"" << std::get<std::string>(value) << "\"";
+            std::cout << std::get<std::string>(value);
     }, value);
 }

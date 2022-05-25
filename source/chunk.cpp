@@ -1,10 +1,9 @@
 #include "chunk.hpp"
 
 #include <iostream>
-#include <sstream>
 #include <iomanip>
 
-std::vector<uint8_t> stellar::Chunk::getCode() {
+[[maybe_unused]] std::vector<uint8_t> stellar::Chunk::getCode() {
     return this->code;
 }
 
@@ -13,7 +12,7 @@ void stellar::Chunk::writeByte(uint8_t byte, int line) {
     this->lines.push_back(line);
 }
 
-std::vector<stellar::Value> stellar::Chunk::getConstants() {
+[[maybe_unused]] std::vector<stellar::Value> stellar::Chunk::getConstants() {
     return this->constants;
 }
 
@@ -48,7 +47,7 @@ inline size_t simpleInstruction(const std::string& name, size_t offset) {
 size_t stellar::Chunk::constantInstruction(const std::string& name, size_t offset) {
     size_t constant = code.at(offset + 1);
 
-    std::cout << std::setw(16) << std::left << name;
+    std::cout << std::setw(16) << std::setfill(' ') << std::left << name;
     std::cout << std::setw(4) << std::right << std::dec << constant;
     std::cout << " <";
     printValue(constants[constant]);
@@ -80,7 +79,7 @@ size_t stellar::Chunk::disassembleInstruction(size_t offset) {
     }
 }
 
-std::vector<int> stellar::Chunk::getLines() {
+[[maybe_unused]] std::vector<int> stellar::Chunk::getLines() {
     return this->lines;
 }
 
