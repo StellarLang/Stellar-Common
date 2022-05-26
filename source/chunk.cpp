@@ -72,6 +72,24 @@ size_t stellar::Chunk::disassembleInstruction(size_t offset) {
         case stellar::OP_CONSTANT: {
             return constantInstruction("OP_CONSTANT", offset);
         }
+        case stellar::OP_ADD: {
+            return simpleInstruction("OP_ADD", offset);
+        }
+        case stellar::OP_SUBTRACT: {
+            return simpleInstruction("OP_SUBTRACT", offset);
+        }
+        case stellar::OP_MULTIPLY: {
+            return simpleInstruction("OP_MULTIPLY", offset);
+        }
+        case stellar::OP_DIVIDE: {
+            return simpleInstruction("OP_DIVIDE", offset);
+        }
+        case stellar::OP_NEGATE: {
+            return simpleInstruction("OP_NEGATE", offset);
+        }
+        case stellar::OP_NOT: {
+            return simpleInstruction("OP_NOT", offset);
+        }
         default: {
             std::cout << "Unknown instruction: " << std::hex << byte << std::endl;
             return offset + 1;

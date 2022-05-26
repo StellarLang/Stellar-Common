@@ -9,6 +9,12 @@ namespace stellar {
     enum OpCode {
         OP_RETURN = 0x00,
         OP_CONSTANT = 0x01,
+        OP_ADD = 0x02,
+        OP_SUBTRACT = 0x03,
+        OP_MULTIPLY = 0x04,
+        OP_DIVIDE = 0x05,
+        OP_NEGATE = 0x06,
+        OP_NOT = 0x07,
     };
 
     class Chunk {

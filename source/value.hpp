@@ -19,7 +19,10 @@ namespace stellar {
             std::string // string
     >;
 
-    ValueType typeOf(Value& value);
-
+    [[maybe_unused]] ValueType typeOf(Value& value);
+    [[maybe_unused]] std::string typeString(Value& value);
     void printValue(Value& value);
+    std::string asString(Value& value);
+    [[maybe_unused]] double asNumber(Value& value);
+    [[maybe_unused]] bool asBool(Value& value);
 }
